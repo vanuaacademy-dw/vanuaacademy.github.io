@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanua Academy, Ltd — Coming Soon</title>
+    <meta name="description" content="Vanua Academy, Ltd - Something beautiful is growing. Coming soon.">
+    <link rel="icon" type="image/jpeg" href="Vanua.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage: #6b7c5e;
+            --sage-light: #8a9a7c;
+            --sage-dark: #4a5a42;
+            --cream: #faf9f6;
+            --cream-warm: #f5f3ee;
+            --charcoal: #2c2c2c;
+            --charcoal-soft: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle organic background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(107, 124, 94, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 60% at 80% 20%, rgba(107, 124, 94, 0.04) 0%, transparent 40%),
+                radial-gradient(ellipse 70% 70% at 70% 80%, rgba(107, 124, 94, 0.05) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 3rem;
+            animation: floatIn 1.5s ease-out;
+        }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 20px rgba(107, 124, 94, 0.15));
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--sage), transparent);
+            margin: 0 auto 2.5rem;
+            animation: expandIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes expandIn {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 60px;
+                opacity: 1;
+            }
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--sage-dark);
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+            animation: fadeIn 1.2s ease-out 0.3s both;
+        }
+
+        .message {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--charcoal-soft);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            animation: fadeIn 1.2s ease-out 0.6s both;
+        }
+
+        .leaf-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--sage-light);
+            font-size: 0.9rem;
+            animation: fadeIn 1.2s ease-out 0.9s both;
+        }
+
+        .leaf-ornament::before,
+        .leaf-ornament::after {
+            content: '✦';
+            font-size: 0.5rem;
+            opacity: 0.6;
+        }
+
+        .contact {
+            margin-top: 4rem;
+            animation: fadeIn 1.2s ease-out 1.2s both;
+        }
+
+        .contact a {
+            color: var(--sage);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            padding: 0.75rem 2rem;
+            border: 1px solid var(--sage-light);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact a:hover {
+            background: var(--sage);
+            color: var(--cream);
+            border-color: var(--sage);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--charcoal-soft);
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+            animation: fadeIn 1.2s ease-out 1.5s both;
+        }
+
+        /* Floating leaf particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--sage-light);
+            opacity: 0.15;
+            border-radius: 50% 0 50% 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 22s; }
+        .particle:nth-child(2) { left: 25%; animation-delay: 3s; animation-duration: 18s; }
+        .particle:nth-child(3) { left: 45%; animation-delay: 6s; animation-duration: 25s; }
+        .particle:nth-child(4) { left: 65%; animation-delay: 2s; animation-duration: 20s; }
+        .particle:nth-child(5) { left: 80%; animation-delay: 5s; animation-duration: 23s; }
+        .particle:nth-child(6) { left: 90%; animation-delay: 8s; animation-duration: 19s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.15;
+            }
+            90% {
+                opacity: 0.15;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                max-width: 220px;
+            }
+            
+            .contact {
+                margin-top: 3rem;
+            }
+
+            footer {
+                bottom: 1.5rem;
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <main class="container">
+        <div class="logo-container">
+            <img src="Vanua.jpg" alt="Vanua Academy" class="logo">
+        </div>
+        
+        <div class="divider"></div>
+        
+        <p class="tagline">Something beautiful is growing</p>
+        
+        <p class="message">Coming Soon</p>
+        
+        <div class="leaf-ornament">
+            Cultivating Excellence
+        </div>
+
+        <div class="contact">
+            <a href="mailto:info@vanuaacademy.com">Get in Touch</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Vanua Academy, Ltd. All rights reserved.
+    </footer>
+</body>
+</html>
+
